@@ -16,6 +16,10 @@ const CreatePage = () => {
     image: "",
   });
 
+  const handleAddProduct = () => {
+    console.log(newProduct);
+  };
+
   return (
     <Container maxW={"container.sm"}>
       <VStack spacing={8}>
@@ -57,11 +61,9 @@ const CreatePage = () => {
                 setNewProduct({ ...newProduct, image: e.target.value })
               }
             />
-            {/* <Button
-              colorScheme="blue"
-              onClick={handleAddProduct}
-              w="full"
-            ></Button> */}
+            <Button colorScheme="blue" onClick={handleAddProduct} w="full">
+              Add Product
+            </Button>
           </VStack>
         </Box>
       </VStack>

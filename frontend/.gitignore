@@ -23,5 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 *eslint.config.js
-*jsconfig.json
-*vite.config.js
+

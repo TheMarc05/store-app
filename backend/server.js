@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import { connectDB } from "./config/db.js";
-import productRoutes from "./routes/productRoute.js";
+import productRoutes from "./routes/product.route.js";
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ app.use("/api/products", productRoutes);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "/frontend/dist")));
-  app.get("*", (req, res) => {
+  app.get("/{*any}", (req, res) => {
     res.sendFile(path.join(__dirname, "/frontend/dist/index.html"));
   });
 }
